@@ -1,0 +1,733 @@
+{
+	"info": {
+		"_postman_id": "934c1b20-0963-43d8-8db5-dac9b4e2953e",
+		"name": "Intern",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31419728"
+	},
+	"item": [
+		{
+			"name": "List Userr",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.code;\r",
+							"let status = pm.response.status;\r",
+							"if (response === 200 && status === 'OK') {\r",
+							"    pm.test(\"Status code is 200 OK\", function () {\r",
+							"        pm.expect(response).to.equal(200);\r",
+							"    });\r",
+							"} else {\r",
+							"    pm.test(\"Status code is not 200\", function () {\r",
+							"        pm.expect(response).to.equal(200); \r",
+							"    });\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/users?page=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Single User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.code;\r",
+							"let status = pm.response.status;\r",
+							"if (response === 200 && status === 'OK') {\r",
+							"    pm.test(\"Status code is 200 OK\", function () {\r",
+							"        pm.expect(response).to.equal(200);\r",
+							"    });\r",
+							"} else {\r",
+							"    pm.test(\"Status code is not 200\", function () {\r",
+							"        pm.expect(response).to.equal(200); \r",
+							"    });\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/users/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Single User Not Found",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.code;\r",
+							"let status = pm.response.status;\r",
+							"if (response === 404 && status === 'Not Found') {\r",
+							"    pm.test(\"Status code is 404 Not Found\", function () {\r",
+							"        pm.expect(response).to.equal(404);\r",
+							"    });\r",
+							"} else {\r",
+							"    pm.test(\"Status code is not 404\", function () {\r",
+							"        pm.expect(response).to.equal(404); \r",
+							"    });\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/users/23",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List<Resources>",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.code;\r",
+							"let status = pm.response.status;\r",
+							"if (response === 200 && status === 'OK') {\r",
+							"    pm.test(\"Status code is 200 OK\", function () {\r",
+							"        pm.expect(response).to.equal(200);\r",
+							"    });\r",
+							"} else {\r",
+							"    pm.test(\"Status code is not 200\", function () {\r",
+							"        pm.expect(response).to.equal(200); \r",
+							"    });\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/unknown",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"unknown"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Single<Resources>",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.code;\r",
+							"let status = pm.response.status;\r",
+							"if (response === 200 && status === 'OK') {\r",
+							"    pm.test(\"Status code is 200 OK\", function () {\r",
+							"        pm.expect(response).to.equal(200);\r",
+							"    });\r",
+							"} else {\r",
+							"    pm.test(\"Status code is not 200\", function () {\r",
+							"        pm.expect(response).to.equal(200); \r",
+							"    });\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/unknown/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"unknown",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Single<Resources> Not Found",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.code;\r",
+							"let status = pm.response.status;\r",
+							"if (response === 404 && status === 'Not Found') {\r",
+							"    pm.test(\"Status code is 404 Not Found\", function () {\r",
+							"        pm.expect(response).to.equal(404);\r",
+							"    });\r",
+							"} else {\r",
+							"    pm.test(\"Status code is not 404\", function () {\r",
+							"        pm.expect(response).to.equal(404); \r",
+							"    });\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/unknown/13",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"unknown",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.environment.set(\"id\",data.id)\r",
+							"\r",
+							"pm.environment.set(\"name\",data.name)\r",
+							"pm.environment.set(\"job\",data.job)\r",
+							"\r",
+							"let response = pm.response.code;\r",
+							"let status = pm.response.status;\r",
+							"if (response === 201 && status === 'Created') {\r",
+							"    pm.test(\"Status code is 201 Created\", function () {\r",
+							"        pm.expect(response).to.equal(201);\r",
+							"    });\r",
+							"} else {\r",
+							"    pm.test(\"Status code is not 201\", function () {\r",
+							"        pm.expect(response).to.equal(201); \r",
+							"    });\r",
+							"}\r",
+							"\r",
+							"pm.test(\"name validation\", function () {\r",
+							"    pm.expect(data.name).to.equal(pm.environment.get(\"name\"))\r",
+							"});\r",
+							"pm.test(\"job validation\", function () {\r",
+							"    pm.expect(data.job).to.equal(pm.environment.get(\"job\"))\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{$randomFirstName}}\",\r\n    \"job\": \"{{$randomJobTitle}}\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/users",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.code;\r",
+							"let status = pm.response.status;\r",
+							"if (response === 200 && status === 'OK') {\r",
+							"    pm.test(\"Status code is 200 OK\", function () {\r",
+							"        pm.expect(response).to.equal(200);\r",
+							"    });\r",
+							"} else {\r",
+							"    pm.test(\"Status code is not 200\", function () {\r",
+							"        pm.expect(response).to.equal(200); \r",
+							"    });\r",
+							"}\r",
+							"\r",
+							"var data = pm.response.json()\r",
+							"pm.test(\"name validation\", function () {\r",
+							"    pm.expect(data.name).to.equal(pm.environment.get(\"name\"))\r",
+							"});\r",
+							"pm.test(\"job validation\", function () {\r",
+							"    pm.expect(data.job).to.equal(pm.environment.get(\"job\"))\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"job\": \"{{job}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/users/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.code;\r",
+							"let status = pm.response.status;\r",
+							"if (response === 200 && status === 'OK') {\r",
+							"    pm.test(\"Status code is 200 OK\", function () {\r",
+							"        pm.expect(response).to.equal(200);\r",
+							"    });\r",
+							"} else {\r",
+							"    pm.test(\"Status code is not 200\", function () {\r",
+							"        pm.expect(response).to.equal(200); \r",
+							"    });\r",
+							"}\r",
+							"\r",
+							"var data = pm.response.json()\r",
+							"pm.test(\"name validation\", function () {\r",
+							"    pm.expect(data.name).to.equal(pm.environment.get(\"name\"))\r",
+							"});\r",
+							"pm.test(\"job validation\", function () {\r",
+							"    pm.expect(data.job).to.equal(pm.environment.get(\"job\"))\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"job\": \"{{job}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/users/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.code;\r",
+							"let status = pm.response.status;\r",
+							"if (response === 204 && status === 'No Content') {\r",
+							"    pm.test(\"Status code is 204 No Content\", function () {\r",
+							"        pm.expect(response).to.equal(204);\r",
+							"    });\r",
+							"} else {\r",
+							"    pm.test(\"Status code is not 204\", function () {\r",
+							"        pm.expect(response).to.equal(204); \r",
+							"    });\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/users/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Successful",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.code;\r",
+							"let status = pm.response.status;\r",
+							"if (response === 200 && status === 'OK') {\r",
+							"    pm.test(\"Status code is 200 OK\", function () {\r",
+							"        pm.expect(response).to.equal(200);\r",
+							"    });\r",
+							"} else {\r",
+							"    pm.test(\"Status code is not 200\", function () {\r",
+							"        pm.expect(response).to.equal(200); \r",
+							"    });\r",
+							"}\r",
+							"\r",
+							"var data = pm.response.json()\r",
+							"pm.environment.set(\"token\",data.token)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "/*{\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\"\r\n}*/\r\n{\r\n    \"email\": \"eve.holt@reqres.in\",\r\n    \"password\": \"pistol\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Unsuccessful",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.code;\r",
+							"let status = pm.response.status;\r",
+							"if (response === 400 && status === 'Bad Request') {\r",
+							"    pm.test(\"Status code is 400 Bad Request\", function () {\r",
+							"        pm.expect(response).to.equal(400);\r",
+							"    });\r",
+							"} else {\r",
+							"    pm.test(\"Status code is 404 Bad Request\", function () {\r",
+							"        pm.expect(response).to.equal(400); \r",
+							"    });\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"sydney@fife\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Successful",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.code;\r",
+							"let status = pm.response.status;\r",
+							"if (response === 200 && status === 'OK') {\r",
+							"    pm.test(\"Status code is 200 OK\", function () {\r",
+							"        pm.expect(response).to.equal(200);\r",
+							"    });\r",
+							"} else {\r",
+							"    pm.test(\"Status code is not 200\", function () {\r",
+							"        pm.expect(response).to.equal(200); \r",
+							"    });\r",
+							"}\r",
+							"var data = pm.response.json()\r",
+							"pm.test(\"token validation\", function () {\r",
+							"    pm.expect(data.token).to.equal(pm.environment.get(\"token\"))\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"eve.holt@reqres.in\",\r\n    \"password\": \"cityslicka\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Unsuccessful",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.code;\r",
+							"let status = pm.response.status;\r",
+							"if (response === 400 && status === 'Bad Request') {\r",
+							"    pm.test(\"Status code is 400 Bad Request\", function () {\r",
+							"        pm.expect(response).to.equal(400);\r",
+							"    });\r",
+							"} else {\r",
+							"    pm.test(\"Status code is 404 Bad Request\", function () {\r",
+							"        pm.expect(response).to.equal(400); \r",
+							"    });\r",
+							"}\r",
+							"var data = pm.response.json()\r",
+							"pm.test(\"Error Message Validation\", function () {\r",
+							"    pm.expect(data.error).to.equal(\"Missing password\")\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"peter@klaven\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delayed Response",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.code;\r",
+							"let status = pm.response.status;\r",
+							"if (response === 200 && status === 'OK') {\r",
+							"    pm.test(\"Status code is 200 OK\", function () {\r",
+							"        pm.expect(response).to.equal(200);\r",
+							"    });\r",
+							"} else {\r",
+							"    pm.test(\"Status code is not 200\", function () {\r",
+							"        pm.expect(response).to.equal(200); \r",
+							"    });\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/users?delay=3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "delay",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
